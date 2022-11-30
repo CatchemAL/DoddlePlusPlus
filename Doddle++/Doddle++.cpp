@@ -23,6 +23,37 @@ public:
     }
 };
 
+class OldSchoolEmployer {
+public:
+    string Name;
+    Employee* Worker;
+
+    OldSchoolEmployer(string name, Employee* worker) {
+        Name = name;
+        Worker = worker;
+    }
+
+    ~OldSchoolEmployer() {
+        std::cout << "Employer Destructor goes here. Don't forget to murder your employee!!" << std::endl;
+        delete Worker;
+    }
+};
+
+class ModernSchoolEmployer {
+public:
+    string Name;
+    std::unique_ptr<Employee> Worker;
+
+    ModernSchoolEmployer(string name, Employee* worker) {
+        Name = name;
+        Worker = std::make_unique<Employee>(*worker);
+    }
+
+    ~ModernSchoolEmployer() {
+        std::cout << "Employer Destructor goes here. Smart pointers will murder the employee for us!!" << std::endl;
+    }
+};
+
 
 
 class Student {
@@ -43,7 +74,7 @@ public:
 };
 
 int CreateALeak() {
-    
+    // Notice how VS doesn't even warn about this...
     auto stud1 = Student("StackMan1", "StudMuffin", 23);
     Student stud2("StackMan2", "StudMuffin", 32);
 
@@ -52,13 +83,27 @@ int CreateALeak() {
     return -1;
 }
 
+int DemonstrateOldSchoolCleanup() {
+    // Check the destructor calls...
+    auto* employee = new Employee("Bilbo", "SomeComp", 42);
+    OldSchoolEmployer employer("SomeComp", employee);
+    return +1;
+}
+
+int DemonstrateModernCppCleanup() {
+    // Check the destructor calls...
+    auto* employee = new Employee("Bilbo", "SomeComp", 42);
+    ModernSchoolEmployer employer("SomeComp", employee);
+    return +1;
+}
+
 
 int main() {
     // Allocating an object on the heap
     auto heapy = "Heapy";
-    auto company = "Insight";
+    auto company = "Blah";
     auto age = 42;
-    auto *employee = new Employee(heapy, company, age);
+    auto* employee = new Employee(heapy, company, age);
 
     std::cout << "Hello World! My name is " << employee->Name << " and I work for " << employee->Company << std::endl;
 
@@ -77,6 +122,12 @@ int main() {
 
     auto value = CreateALeak();
     std::cout << value << std::endl;
+
+    // Demonstrate old school cleanup techniques
+    auto value2 = DemonstrateOldSchoolCleanup();
+
+    // Demonstrate modern techniques
+    auto value3 = DemonstrateModernCppCleanup();
 }
 
 
