@@ -4,7 +4,8 @@
 class YieldCurve
 {
 public:
-	YieldCurve(std::vector<double> tenors, std::vector<double> rates);
+	YieldCurve(const std::vector<double>& tenors, const std::vector<double>& rates);
+
 	int getSum() const;
 
 	double getDiscountFactor(double tenor) const;

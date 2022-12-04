@@ -1,7 +1,7 @@
 #include "YieldCurve.h"
 using std::vector;
 
-YieldCurve::YieldCurve(vector<double> tenors, vector<double> rates) 
+YieldCurve::YieldCurve(const vector<double>& tenors, const vector<double>& rates) 
 	: tenors(tenors), rates(rates)
 {
 }

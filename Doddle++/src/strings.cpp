@@ -26,7 +26,7 @@ void fun_with_strings()
 
 	std::cout << std::endl << std::endl << "Working with C++ strings ===============" << std::endl;
 	const std::string cpp_name = "Alex";
-	for (const char character : cpp_name)
+	for (const char& character : cpp_name)
 	{
 		std::cout << character << std::endl;
 	}

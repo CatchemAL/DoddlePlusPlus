@@ -25,6 +25,7 @@ void FunWithConst();
 void FunWithCopyConstructors();
 void FunWithStacks();
 void MakingMyOwnString();
+void FunWithVectors();
 
 class Student {
 public:
@@ -99,6 +100,7 @@ int main() {
     FunWithCopyConstructors();
     FunWithStacks();
     MakingMyOwnString();
+    FunWithVectors();
 
     int a = 5;
     int* ap = &a;
@@ -137,8 +139,8 @@ int main() {
     std::cout << "Done." << std::endl;
 
     // Allocating an object on the stack
-    auto shelfStacker = Employee("StackMan", "Ford", 23);
-    std::cout << "Hello World! My name is " << shelfStacker._name << " and I work for " << shelfStacker._company << std::endl;
+    auto shelf_stacker = Employee("StackMan", "Ford", 23);
+    std::cout << "Hello World! My name is " << shelf_stacker._name << " and I work for " << shelf_stacker._company << std::endl;
 
     // No need to free as it was allocated on the stack
     // delete employee;
@@ -163,11 +165,11 @@ int main() {
     std::cout << "The answer is: (" << x << ", " << y << " )" << std::endl;
 
 
-    vector<double> tenors = { 1.0, 2.0, 3.0, 4.0 };
-    vector<double> rates = { 0.01, 0.02, 0.03, 0.04 };
+    const vector tenors = { 1.0, 2.0, 3.0, 4.0 };
+    vector rates = { 0.01, 0.02, 0.03, 0.04 };
 
-    YieldCurve yieldCurve(tenors, rates);
-    double discountFactor = yieldCurve.getDiscountFactor(42.0);
+    const YieldCurve yield_curve(tenors, rates);
+    double discount_factor = yield_curve.getDiscountFactor(42.0);
 
 
 

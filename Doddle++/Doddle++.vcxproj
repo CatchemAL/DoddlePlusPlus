@@ -160,6 +160,7 @@
     <ClCompile Include="src\strings.cpp" />
     <ClCompile Include="src\weapon.cpp" />
     <ClCompile Include="src\yield_curve.cpp" />
+    <ClCompile Include="vectors.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\Employee.h" />
