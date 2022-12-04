@@ -17,10 +17,14 @@ void display_primitive_sizes();
 void fun_with_pointers();
 void fun_with_references();
 void fun_with_classes();
-void fun_with_loggers();
+void FunWithLoggers();
 void fun_with_virtual();
 void fun_with_arrays();
 void fun_with_strings();
+void FunWithConst();
+void FunWithCopyConstructors();
+void FunWithStacks();
+void MakingMyOwnString();
 
 class Student {
 public:
@@ -87,10 +91,14 @@ int main() {
     fun_with_pointers();
     fun_with_references();
     fun_with_classes();
-    fun_with_loggers();
+    FunWithLoggers();
     fun_with_virtual();
     fun_with_arrays();
     fun_with_strings();
+    FunWithConst();
+    FunWithCopyConstructors();
+    FunWithStacks();
+    MakingMyOwnString();
 
     int a = 5;
     int* ap = &a;

@@ -147,12 +147,16 @@
   <ItemGroup>
     <ClCompile Include="src\arrays.cpp" />
     <ClCompile Include="src\classes.cpp" />
+    <ClCompile Include="src\const_and_mutable.cpp" />
+    <ClCompile Include="src\constructors.cpp" />
     <ClCompile Include="src\Doddle++.cpp" />
     <ClCompile Include="src\logger.cpp" />
     <ClCompile Include="src\maths.cpp" />
+    <ClCompile Include="src\MyString.cpp" />
     <ClCompile Include="src\pointers.cpp" />
     <ClCompile Include="src\primitives.cpp" />
     <ClCompile Include="src\references.cpp" />
+    <ClCompile Include="src\stack_and_heap.cpp" />
     <ClCompile Include="src\strings.cpp" />
     <ClCompile Include="src\weapon.cpp" />
     <ClCompile Include="src\yield_curve.cpp" />

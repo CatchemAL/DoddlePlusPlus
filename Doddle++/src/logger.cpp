@@ -5,9 +5,9 @@ class Log
 public:
 	enum Level
 	{
-		LevelError = 0,
-		LevelWarning,
-		LevelInfo
+		kError = 0,
+		kWarning,
+		kInfo
 	};
 
 	explicit Log(const Level level)
@@ -15,46 +15,46 @@ public:
 		m_level = level;
 	}
 
-	Level m_level = LevelInfo;
+	Level m_level = kInfo;
 
-	void set_level(const Level level)
+	void SetLevel(const Level level)
 	{
 		m_level = level;
 	}
 
-	void info(const char* message) const
+	void Info(const char* message) const
 	{
-		if (m_level >= LevelInfo)
+		if (m_level >= kInfo)
 			std::cout << "[INFO]: " << message << std::endl;
 	}
 
 
-	void warn(const char* message) const
+	void Warn(const char* message) const
 	{
-		if (m_level >= LevelWarning)
+		if (m_level >= kWarning)
 			std::cout << "[WARNING]: " << message << std::endl;
 	}
 
 
-	void error(const char* message) const
+	void Error(const char* message) const
 	{
-		if (m_level >= LevelError)
+		if (m_level >= kError)
 			std::cout << "[ERROR]: " << message << std::endl;
 	}
 };
 
 
-void fun_with_loggers()
+void FunWithLoggers()
 {
-	Log logger(Log::LevelInfo);
+	Log logger(Log::kInfo);
 
-	logger.warn("This is bad");
-	logger.info("This is not interesting");
-	logger.error("This is critical");
+	logger.Warn("This is bad");
+	logger.Info("This is not interesting");
+	logger.kError("This is critical");
 
-	logger.set_level(Log::LevelWarning);
-	logger.warn("This is bad");
-	logger.info("This is not interesting");
-	logger.error("This is critical");
+	logger.SetLevel(Log::kWarning);
+	logger.Warn("This is bad");
+	logger.Info("This is not interesting");
+	logger.kError("This is critical");
 }
 
