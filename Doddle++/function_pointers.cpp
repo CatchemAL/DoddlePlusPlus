@@ -20,9 +20,9 @@ std::vector<TOut> Select(const std::vector<TIn>& vec, TOut(* selector)(const TIn
 {
 	std::vector<TOut> result;
 	result.reserve(vec.size());
-	for (const TIn& element : vec)
+	for (const auto& element : vec)
 	{
-		TOut response = selector(element);
+		auto response = selector(element);
 		result.push_back(response);
 	}
 

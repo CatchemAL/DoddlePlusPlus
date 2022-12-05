@@ -146,6 +146,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="function_pointers.cpp" />
+    <ClCompile Include="Lambdas.cpp" />
     <ClCompile Include="Macros.cpp" />
     <ClCompile Include="src\arrays.cpp" />
     <ClCompile Include="src\classes.cpp" />
