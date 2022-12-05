@@ -31,6 +31,7 @@ void FunWithTemplates();
 void fun_with_macros();
 void FunWithFunctionPointers();
 void FunWithLambdas();
+void FunWithThreads();
 
 class Student {
 public:
@@ -111,6 +112,7 @@ int main() {
     fun_with_macros();
     FunWithFunctionPointers();
     FunWithLambdas();
+    FunWithThreads();
 
     int a = 5;
     int* ap = &a;

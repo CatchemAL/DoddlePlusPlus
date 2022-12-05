@@ -1,6 +1,8 @@
 
 #include <iostream>
+#include <string>
 #include <vector>
+
 
 void SayHello(int number)
 {

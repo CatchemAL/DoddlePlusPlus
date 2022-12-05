@@ -1,4 +1,5 @@
 #include <iostream>
+#include <string>
 
 void slow_copy(const std::string name)
 {
