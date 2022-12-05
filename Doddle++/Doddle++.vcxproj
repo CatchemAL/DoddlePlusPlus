@@ -145,6 +145,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Macros.cpp" />
     <ClCompile Include="src\arrays.cpp" />
     <ClCompile Include="src\classes.cpp" />
     <ClCompile Include="src\const_and_mutable.cpp" />
@@ -160,6 +161,8 @@
     <ClCompile Include="src\strings.cpp" />
     <ClCompile Include="src\weapon.cpp" />
     <ClCompile Include="src\yield_curve.cpp" />
+    <ClCompile Include="Templates.cpp" />
+    <ClCompile Include="tuples.cpp" />
     <ClCompile Include="vectors.cpp" />
   </ItemGroup>
   <ItemGroup>

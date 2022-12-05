@@ -26,6 +26,9 @@ void FunWithCopyConstructors();
 void FunWithStacks();
 void MakingMyOwnString();
 void FunWithVectors();
+void FunWithTuples();
+void FunWithTemplates();
+void fun_with_macros();
 
 class Student {
 public:
@@ -101,6 +104,9 @@ int main() {
     FunWithStacks();
     MakingMyOwnString();
     FunWithVectors();
+    FunWithTuples();
+    FunWithTemplates();
+    fun_with_macros();
 
     int a = 5;
     int* ap = &a;
