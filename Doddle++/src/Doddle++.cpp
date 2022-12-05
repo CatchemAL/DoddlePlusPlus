@@ -29,6 +29,7 @@ void FunWithVectors();
 void FunWithTuples();
 void FunWithTemplates();
 void fun_with_macros();
+void FunWithFunctionPointers();
 
 class Student {
 public:
@@ -107,6 +108,7 @@ int main() {
     FunWithTuples();
     FunWithTemplates();
     fun_with_macros();
+    FunWithFunctionPointers();
 
     int a = 5;
     int* ap = &a;
