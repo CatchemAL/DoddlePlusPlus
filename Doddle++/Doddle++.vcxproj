@@ -149,6 +149,7 @@
     <ClCompile Include="function_pointers.cpp" />
     <ClCompile Include="Lambdas.cpp" />
     <ClCompile Include="Macros.cpp" />
+    <ClCompile Include="StructuredBindings.cpp" />
     <ClCompile Include="threads.cpp" />
     <ClCompile Include="src\arrays.cpp" />
     <ClCompile Include="src\classes.cpp" />

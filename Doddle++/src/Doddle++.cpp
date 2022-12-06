@@ -32,6 +32,8 @@ void fun_with_macros();
 void FunWithFunctionPointers();
 void FunWithLambdas();
 void FunWithThreads();
+void FunWithSorting();
+void FunWithStructuredBindings();
 
 class Student {
 public:
@@ -113,6 +115,8 @@ int main() {
     FunWithFunctionPointers();
     FunWithLambdas();
     FunWithThreads();
+    FunWithSorting();
+    FunWithStructuredBindings();
 
     int a = 5;
     int* ap = &a;
