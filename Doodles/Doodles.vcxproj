@@ -21,10 +21,9 @@
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>
-    <ProjectGuid>{b5d3a1e4-8fc6-4886-8aa7-a8bbb8359a7d}</ProjectGuid>
-    <RootNamespace>Doddle</RootNamespace>
+    <ProjectGuid>{dd07cbb6-3104-40c4-9ec1-7224d8b20dea}</ProjectGuid>
+    <RootNamespace>Doodles</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
-    <ProjectName>DoodlesOld</ProjectName>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
@@ -75,15 +74,15 @@
     <OutDir>$(SolutionDir)bin\$(Platform)\$(Configuration)\</OutDir>
     <IntDir>$(SolutionDir)bin\intermediates\$(Platform)\$(Configuration)\</IntDir>
   </PropertyGroup>
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
-    <OutDir>$(SolutionDir)bin\$(Platform)\$(Configuration)\</OutDir>
-    <IntDir>$(SolutionDir)bin\intermediates\$(Platform)\$(Configuration)\</IntDir>
-  </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <OutDir>$(SolutionDir)bin\$(Platform)\$(Configuration)\</OutDir>
     <IntDir>$(SolutionDir)bin\intermediates\$(Platform)\$(Configuration)\</IntDir>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <OutDir>$(SolutionDir)bin\$(Platform)\$(Configuration)\</OutDir>
+    <IntDir>$(SolutionDir)bin\intermediates\$(Platform)\$(Configuration)\</IntDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <OutDir>$(SolutionDir)bin\$(Platform)\$(Configuration)\</OutDir>
     <IntDir>$(SolutionDir)bin\intermediates\$(Platform)\$(Configuration)\</IntDir>
   </PropertyGroup>
@@ -93,6 +92,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
+      <LanguageStandard>stdcpp20</LanguageStandard>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -107,6 +107,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
+      <LanguageStandard>stdcpp20</LanguageStandard>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -121,8 +122,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <LanguageStandard>stdcpplatest</LanguageStandard>
-      <AssemblerOutput>NoListing</AssemblerOutput>
+      <LanguageStandard>stdcpp20</LanguageStandard>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -137,6 +137,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
+      <LanguageStandard>stdcpp20</LanguageStandard>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -146,18 +147,16 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="chrono.cpp" />
-    <ClCompile Include="function_pointers.cpp" />
-    <ClCompile Include="Lambdas.cpp" />
-    <ClCompile Include="Macros.cpp" />
-    <ClCompile Include="StructuredBindings.cpp" />
-    <ClCompile Include="threads.cpp" />
+    <ClCompile Include="src\Doodles.cpp" />
     <ClCompile Include="src\arrays.cpp" />
+    <ClCompile Include="src\chrono.cpp" />
     <ClCompile Include="src\classes.cpp" />
-    <ClCompile Include="src\const_and_mutable.cpp" />
     <ClCompile Include="src\constructors.cpp" />
-    <ClCompile Include="src\Doddle++.cpp" />
+    <ClCompile Include="src\const_and_mutable.cpp" />
+    <ClCompile Include="src\function_pointers.cpp" />
+    <ClCompile Include="src\Lambdas.cpp" />
     <ClCompile Include="src\logger.cpp" />
+    <ClCompile Include="src\Macros.cpp" />
     <ClCompile Include="src\maths.cpp" />
     <ClCompile Include="src\MyString.cpp" />
     <ClCompile Include="src\pointers.cpp" />
@@ -165,11 +164,13 @@
     <ClCompile Include="src\references.cpp" />
     <ClCompile Include="src\stack_and_heap.cpp" />
     <ClCompile Include="src\strings.cpp" />
+    <ClCompile Include="src\StructuredBindings.cpp" />
+    <ClCompile Include="src\Templates.cpp" />
+    <ClCompile Include="src\threads.cpp" />
+    <ClCompile Include="src\tuples.cpp" />
+    <ClCompile Include="src\vectors.cpp" />
     <ClCompile Include="src\weapon.cpp" />
     <ClCompile Include="src\yield_curve.cpp" />
-    <ClCompile Include="Templates.cpp" />
-    <ClCompile Include="tuples.cpp" />
-    <ClCompile Include="vectors.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\Employee.h" />
