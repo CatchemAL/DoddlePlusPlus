@@ -38,7 +38,7 @@ int Func(const int n)
 	return n * 2;
 }
 
-int Func2(const std::string n)
+std::size_t Func2(const std::string n)
 {
 	return n.length();
 }
