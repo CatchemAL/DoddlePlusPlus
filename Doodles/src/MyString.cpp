@@ -28,7 +28,7 @@ public:
 		memcpy(buffer_, other.buffer_, length_ + 1);
 	}
 
-	MyString(MyString&& other) // MOVE CONSTRUCTOR
+	MyString(MyString&& other) noexcept // MOVE CONSTRUCTOR
 	{
 		std::cout << "Move constructor being called..." << std::endl;
 		length_ = other.length_;
@@ -62,7 +62,10 @@ public:
 
 std::ostream& operator << (std::ostream& outs, const MyString& p)
 {
-	return outs << "MyString(length_=" << p.length_ << ", buffer_=" << p.buffer_ << ")";
+	if (p.buffer_ == nullptr)
+		return outs << "MyString(length_=" << p.length_ << ", buffer_=NULL)";
+	else
+		return outs << "MyString(length_=" << p.length_ << ", buffer_=" << p.buffer_ << ")";
 }
 
 
@@ -103,4 +106,9 @@ void MakingMyOwnString()
 	// Print with unintended copy
 	print_bad(my_string);
 	print_good(my_string);
+
+	MyString into = std::move(bar);
+	std::cout << bar << std::endl; // rust would compile error!
+	std::cout << into << std::endl;
+
 }
