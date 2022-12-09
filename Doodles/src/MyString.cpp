@@ -41,6 +41,15 @@ public:
 		return *this;
 	}
 
+
+	MyString operator+(MyString& other) const {
+		char* result = new char[length_ + other.length_ + 1];
+		memcpy(result, buffer_, length_);
+		memcpy(result + length_, other.buffer_, other.length_ + 1);
+		return MyString(result);
+	}
+
+
 	static void Swap(MyString& string, MyString& other) {
 		std::swap(string.length_, other.length_);
 		std::swap(string.buffer_, other.buffer_);
@@ -80,6 +89,11 @@ void print_good(const MyString& my_string)
 	std::cout << my_string << std::endl;
 }
 
+MyString factory() {
+	MyString fac = "FROM_FACTORY";
+	std::cout << fac << std::endl;
+	return fac;
+}
 
 void MakingMyOwnString()
 {
@@ -97,18 +111,28 @@ void MakingMyOwnString()
 	my_copied_string[0] = 'F';
 	std::cout << my_copied_string << std::endl;
 	std::cout << my_string << std::endl;
+	
+	{
+		MyString foo("temp");
+		MyString bar("key");
+		foo = bar;
 
-	MyString foo("temp");
-	MyString bar("key");
-	foo = bar;
 
+		// Print with unintended copy
+		print_bad(my_string);
+		print_good(my_string);
 
-	// Print with unintended copy
-	print_bad(my_string);
-	print_good(my_string);
+		MyString into = std::move(bar);
+		std::cout << bar << std::endl; // rust would compile error!
+		std::cout << into << std::endl;
+	}
 
-	MyString into = std::move(bar);
-	std::cout << bar << std::endl; // rust would compile error!
-	std::cout << into << std::endl;
+	{
+		MyString check = "placeholder";
+		MyString ping = "ping-";
+		MyString pong = "-pong";
+		check = ping + pong;
+	}
+
 
 }
