@@ -5,11 +5,11 @@
 class MyString
 {
 private:
-	unsigned long long length_;
+	std::size_t length_;
 	char* buffer_;
 
 public:
-	MyString(const char* buffer)
+	MyString(const char* buffer) // USUAL CONSTRUCTOR
 	{
 		length_ = strlen(buffer);
 		buffer_ = new char[length_+1];
@@ -17,7 +17,7 @@ public:
 		buffer_[length_] = '\0';
 	}
 
-	MyString(const MyString& other)
+	MyString(const MyString& other) // COPY CONSTRUCTOR
 	{
 		// As simple as this...
 		// memcpy(this, &other, sizeof(MyString));
@@ -26,6 +26,16 @@ public:
 		std::cout << "Copy constructor being called..." << std::endl;
 		buffer_ = new char[length_ + 1];
 		memcpy(buffer_, other.buffer_, length_ + 1);
+	}
+
+	MyString& operator=(MyString other) {
+		MyString::Swap(*this, other);
+		return *this;
+	}
+
+	static void Swap(MyString& string, MyString& other) {
+		std::swap(string.length_, other.length_);
+		std::swap(string.buffer_, other.buffer_);
 	}
 
 	~MyString()
@@ -76,6 +86,11 @@ void MakingMyOwnString()
 	my_copied_string[0] = 'F';
 	std::cout << my_copied_string << std::endl;
 	std::cout << my_string << std::endl;
+
+	MyString foo("test");
+	MyString bar("tmp");
+	foo = bar;
+
 
 	// Print with unintended copy
 	print_bad(my_string);
