@@ -28,6 +28,14 @@ public:
 		memcpy(buffer_, other.buffer_, length_ + 1);
 	}
 
+	MyString(MyString&& other) // MOVE CONSTRUCTOR
+	{
+		std::cout << "Move constructor being called..." << std::endl;
+		length_ = other.length_;
+		buffer_ = other.buffer_;
+		other.buffer_ = nullptr;
+	}
+
 	MyString& operator=(MyString other) {
 		MyString::Swap(*this, other);
 		return *this;
@@ -87,8 +95,8 @@ void MakingMyOwnString()
 	std::cout << my_copied_string << std::endl;
 	std::cout << my_string << std::endl;
 
-	MyString foo("test");
-	MyString bar("tmp");
+	MyString foo("temp");
+	MyString bar("key");
 	foo = bar;
 
 
