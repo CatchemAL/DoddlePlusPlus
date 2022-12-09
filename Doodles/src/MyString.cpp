@@ -41,14 +41,11 @@ public:
 		return *this;
 	}
 
-
-	MyString operator+(MyString other) const {
+	MyString operator+(MyString& other) const {
 		char* result = new char[length_ + other.length_ + 1];
 		memcpy(result, buffer_, length_);
 		memcpy(result + length_, other.buffer_, other.length_ + 1);
-		MyString r(result);
-		std::cout << r << std::endl;
-		return r;
+		return MyString(result);
 	}
 
 
@@ -135,6 +132,4 @@ void MakingMyOwnString()
 		MyString pong = "-pong";
 		check = ping + pong;
 	}
-
-
 }
