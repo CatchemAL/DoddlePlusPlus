@@ -36,7 +36,7 @@ public:
 		other.buffer_ = nullptr;
 	}
 
-	MyString& operator=(MyString other) {
+	MyString& operator=(MyString other) { // surprising inversion
 		MyString::Swap(*this, other);
 		return *this;
 	}
